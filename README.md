@@ -14,7 +14,7 @@ Install Telescope and this extension, for example with lazy.nvim:
     "pfdzm/graphite-picker",
   },
   config = function()
-    require("telescope").load_extension("graphite")
+    require("telescope").load_extension("graphite_picker")
   end
 }
 ```
