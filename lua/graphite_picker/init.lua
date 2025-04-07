@@ -1,5 +1,6 @@
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
+local previewers = require("telescope.previewers")
 local conf = require("telescope.config").values
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
@@ -18,6 +19,12 @@ local graphite_picker = function(opts)
 						display = entry,
 						ordinal = entry,
 					}
+				end,
+			}),
+
+			previewer = previewers.new_termopen_previewer({
+				get_command = function(entry, status)
+					return { "gt", "log", "--no-interactive", "--reverse" }
 				end,
 			}),
 
